@@ -15,13 +15,13 @@ app.get('/', (req, res) => {
 app.get('/types', async (req, res) => {
     console.log('---- get types')
     const types= await notion.getTypes()
-    res.send({data:types})
+    res.send(types)
 })
 
 app.get('/rows', async (req, res) => {
     console.log('---- get rows')
     const rows= await notion.getRows()
-    res.send({data:rows})
+    res.send(rows)
 })
 
 app.post('/create-row' , jsonParser, async (req, res) =>{
